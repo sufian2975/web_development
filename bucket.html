@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust - Travel Planner</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    
+        
+        <header>
+            <nav class="navbar">
+                <div class="logo">Wanderlust</div>
+                <ul class="nav-links">
+
+                    <li><a href="index.html">Home</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#" id="planner-btn">Planner</a>
+                        <ul class="dropdown-menu" id="planner-menu">
+                            <li><a href="trip.html">Trip Overview</a></li>
+                            <li><a href="expense.html">Expense Tracker</a></li>
+                            <li><a href="todo.html">To-do List</a></li>
+                            <li><a href="bucket.html">Bucket List</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="map.html">Map</a></li>
+
+
+                </ul>
+                <div class="auth-buttons">
+                    <button class="login"><a href="login.html">Login</a></button>
+                    <button class="signup"><a href="signup.html">Sign Up</a></button>
+                </div>
+            </nav>
+        </header>
+    <div class="bucket">
+        <h2>Bucket List</h2>
+        <form id="bucket-form">
+        <div class="bucket-form">
+            <input type="text" id="newTrip" placeholder="Add trip">
+            
+            <select id="category">
+                <option value="">Select Tag</option>
+                <option value="dream">Dream</option>
+                <option value="planning">Planning</option>
+                <option value="booked">Booked</option>
+                <option value="visited">Visited</option>
+            </select>
+            
+            <button class="add-btn" type="submit">Add</button>
+
+        </div>
+    </form>
+        <table>
+            <thead>
+                <tr>
+                  
+                        <th>Trip</th>
+                        <th>Tag</th>
+                        
+                        <th>Action</th>
+                   
+                   
+                </tr>
+            </thead>
+            <tbody id="bucket-table">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

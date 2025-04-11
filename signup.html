@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="planner-script.js"></script>
+    <style>
+       
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding-top: 80px; 
+            text-align: center;
+        }
+       
+        .formContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+        }
+        .box {
+            margin-top: 120px;
+            background-color: #d5ecef;
+            padding: 20px;
+            border-radius: 10px;
+            
+            width: 90%;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            color: #204560;
+        }
+
+        .form-group input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .add-btn {
+            background-color: #204560;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .add-btn:hover {
+            background-color: #3b6f9e;
+        }
+
+      
+        #error-msg {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+   
+    <nav class="navbar">
+        <div class="logo">Wanderlust</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" id="planner-btn">Planner</a>
+                <ul class="dropdown-menu" id="planner-menu">
+                    <li><a href="trip.html">Trip Overview</a></li>
+                    <li><a href="expense.html">Expense Tracker</a></li>
+                    <li><a href="todo.html">To-do List</a></li>
+                    <li><a href="bucket.html">Bucket List</a></li>
+                </ul>
+            </li>
+            <li><a href="map.html">Map</a></li>
+        </ul>
+        <div class="auth-buttons">
+           
+            <button class="login"><a href="login.html">Login</a></button>
+            <button class="signup"><a href="signup.html">Sign Up</a></button>
+        </div>
+    </nav>
+
+
+    <div class="formContainer">
+        <section class="box" id="signup-form">
+            <h2>Sign Up</h2>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button class="add-btn" onclick="signupUser()">Sign Up</button>
+            </div>
+     
+            <div id="error-msg"></div>
+        </section>
+    </div>
+
+    <script>
+       
+        function signupUser() {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('error-msg');
+
+        
+            errorMsg.textContent = "";
+
+         
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!email || !emailPattern.test(email)) {
+                errorMsg.textContent = "Please enter a valid email.";
+                return;
+            }
+
+            
+            if (!password || password.length < 6) {
+                errorMsg.textContent = "Password must be at least 6 characters long.";
+                return;
+            }
+
+            
+            alert("Sign Up successful!");
+            window.location.href = 'index.html'; 
+        }
+    </script>
+</body>
+</html>

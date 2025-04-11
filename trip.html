@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust - Planner</title>
+    <link rel="stylesheet" href="style.css">
+
+
+
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Wanderlust</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" id="planner-btn">Planner</a>
+                    <ul class="dropdown-menu" id="planner-menu">
+                        <li><a href="trip.html">Trip Overview</a></li>
+                        <li><a href="expense.html">Expense Tracker</a></li>
+                        <li><a href="todo.html">To-do List</a></li>
+                        <li><a href="bucket.html">Bucket List</a></li>
+                    </ul>
+                </li>
+                <li><a href="map.html">Map</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="login"><a href="login.html">Login</a></button>
+
+
+                <button class="signup"><a href="signup.html">Sign Up</a></button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="trip-summary">
+        <h2>Trip Summary</h2>
+        <div class="summary-form">
+            <input type="text" id="trip-name" placeholder="Trip Name">
+            <input type="date" id="start-date">
+            <input type="date" id="end-date">
+            <input type="text" id="duration" placeholder="Duration" readonly>
+            <input type="number" id="people" placeholder="People">
+            <button class="add-btn" id="add-trip">Add</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Duration</th>
+                    <th>People</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="trip-table">
+
+            </tbody>
+        </table>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

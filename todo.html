@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust - To-do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="todo-style.css">
+    <script defer src="script.js"></script>
+    <script defer src="todo-script.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .todo-list-container {
+            background-color: #d5ecef;
+            padding: 30px;
+            border-radius: 20px;
+            width: 80%;
+            max-width: 420px;
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #204560;
+        }
+
+        .todo-form input {
+            width: 75%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-right: 10px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .add-btn {
+            background-color: #204560;
+            color: #F0F8FD;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .tasks {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .tasks li {
+            background: #ffffff;
+            color: #333;
+            padding: 12px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .delete-btn {
+            background: #204560;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo">Wanderlust</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" id="planner-btn">Planner</a>
+                    <ul class="dropdown-menu" id="planner-menu">
+                        <li><a href="trip.html">Trip Overview</a></li>
+                        <li><a href="expense.html">Expense Tracker</a></li>
+                        <li><a href="todo.html">To-do List</a></li>
+                        <li><a href="bucket.html">Bucket List</a></li>
+                    </ul>
+                </li>
+                <li><a href="map.html">Map</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html"><button class="login">Login</button></a>
+                <a href="signup.html"><button class="signup">Sign Up</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="todo-list-container">
+        <h2>To-do List</h2>
+        <div class="todo-form">
+            <input type="text" id="todo-task-input" placeholder="Add a new task">
+            <button class="add-btn">Add</button>
+        </div>
+        <ul class="tasks"></ul>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const addButton = document.querySelector(".add-btn");
+            const taskInput = document.querySelector("#todo-task-input");
+            const taskList = document.querySelector(".tasks");
+
+            addButton.addEventListener("click", function () {
+                let task = taskInput.value.trim();
+                if (task !== "") {
+                    let listItem = document.createElement("li");
+                    listItem.innerHTML = `
+                        <span>${task}</span>
+                        <button class="delete-btn">Delete</button>
+                    `;
+                    taskList.appendChild(listItem);
+                    taskInput.value = "";
+
+                    listItem.querySelector(".delete-btn").addEventListener("click", function () {
+                        listItem.remove();
+                    });
+                }
+            });
+
+            taskInput.addEventListener("keypress", function (e) {
+                if (e.key === "Enter") {
+                    addButton.click();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

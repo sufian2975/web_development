@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+}
+
+.container {
+    background: url('travell.png') no-repeat center center;
+    background-size: 66%;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-top: 50px;
+}
+
+.navbar {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #c0e2e6;
+    border-radius: 100px;
+    width: 80%;
+    max-width: 900px;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #204560;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #204560;
+    font-weight: bold;
+    padding: 15px 18px;
+    border-radius: 5px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    text-align: left;
+    background: #c0e2e6;
+    line-height: 40px;
+    padding: 0;
+    width: 190px;
+    display: none;
+    border-radius: 25px;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 4px 17px;
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(189, 202, 223, 0.5);
+}
+
+.nav-links li:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.login,
+.signup {
+    border: none;
+    border-radius: 100px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.login {
+    background-color: #DBEEFC;
+    color: #204560;
+    font-weight: bold;
+}
+
+.signup {
+    background-color: #204560;
+    color: #DBEEFC;
+    font-weight: bold;
+}
+
+.hero-container {
+    position: relative;
+    height: calc(100vh - 90px);
+    text-align: center;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    color: #182833;
+}
+
+.hero-content h1 {
+    margin-bottom: 5px;
+    font-size: 32px;
+}
+
+.hero-content p {
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #221f1f;
+}
+
+.features {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.feature-card {
+    width: 150px;
+    height: 155px;
+    padding: 20px;
+    text-align: left;
+    font-size: 14px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.feature-card a {
+    text-decoration: none;
+}
+
+.feature-card h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 19px;
+    color: #181c33;
+}
+
+.feature-card p {
+    margin-top: 50px;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+#trip-overview {
+    background-color: #ffecd1;
+    color: #A08869;
+}
+
+#expense-tracker {
+    background-color: #e6ffdd;
+    color: #91A069;
+}
+
+#expense-tracker p {
+    margin-top: 30px;
+}
+
+#to-do-list {
+    background-color: #d0d0ff;
+    color: #7B69A0;
+}
+
+#bucket-list {
+    background-color: #ffd0ea;
+    color: #A27797;
+}
+
+.trip-summary,
+.expense,
+.bucket {
+    top: 120px;
+    position: relative;
+    background: #d5ecef;
+    padding: 30px;
+    width: 60%;
+    margin: 30px auto;
+    border-radius: 30px;
+    display: block;
+}
+
+.summary-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #204560;
+    color: white;
+    padding: 5px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    border: 1px solid #4c5760;
+    padding: 10px 9px;
+}
+
+th {
+    background-color: #d2ece4;
+}
+
+td {
+    text-align: center;
+}
+
+.expense h2,
+.bucket h2,
+.trip-summary h2 {
+    text-align: center;
+    color: #204560;
+    font-weight: bold;
+}
+
+.expense .budget-form,
+.bucket .bucket-form {
+    justify-content: center;
+    display: flex;
+    gap: 5px;
+}
+
+input,
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-btn {
+    background-color: #204560;
+    color: #F0F8FD;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #204560;
+    padding: 10px 9px;
+}
+
+th {
+    background-color: #d2ece4;
+}
+
+td {
+    text-align: center;
+}
+
+.total {
+    background-color: #204560;
+    color: #F0F8FD;
+    text-align: center;
+    border-radius: 100px;
+    border: none;
+    padding: 2px 13px;
+    font-weight: bold;
+    font-size: 12px;
+    width: 115px;
+    margin-top: 15px;
+}
+
+bucket .bucket-form {
+    margin: auto;
+    position: absolute;
+    text-align: center;
+}
+
+.map-container {
+    top: 120px;
+    position: relative;
+    background: #d5ecef;
+    padding: 30px;
+    width: 60%;
+    margin: 30px auto;
+    border-radius: 30px;
+    display: block;
+}
+
+.map-container h2 {
+    text-align: center;
+    color: #204560;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    position: relative;
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .container {
+        padding-top: 80px;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 90%;
+    }
+
+    .map-container {
+        width: 95%;
+        height: 400px;
+    }
+
+    #map {
+        height: 300px;
+    }
+}
